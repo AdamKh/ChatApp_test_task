@@ -21,7 +21,18 @@
     "noUnusedParameters": true,
     "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true
+    "noUncheckedSideEffectImports": true,
+
+    /* Path aliases */
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"],
+      "@shared/*": ["src/shared/*"],
+      "@widgets/*": ["src/widgets/*"],
+      "@pages/*": ["src/pages/*"],
+      "@assets/*": ["src/shared/assets/*"],
+      "@entities/*": ["src/shared/entities/*"]
+    }
   },
   "include": ["src"]
 }
