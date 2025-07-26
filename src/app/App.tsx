@@ -1,10 +1,14 @@
 import styles from './styles/App.module.scss'
 import Home from '../pages/home'
+import Layout from '../shared/ui/Layout/Layout'
 
 const App: React.FC = () => {
   return (
     <main className={styles.main}>
-      <Home />
+      <Layout>
+        <Home />
+        {/* Здесь можно добавить другие компоненты */}
+      </Layout>
     </main>
   )
 }
