@@ -7,17 +7,12 @@ import TaskInput from '../TaskInput/TaskInput'
 import {
   closestCorners,
   DndContext,
-  KeyboardSensor,
   PointerSensor,
   TouchSensor,
   useSensor,
   useSensors,
 } from '@dnd-kit/core'
-import {
-  SortableContext,
-  sortableKeyboardCoordinates,
-  verticalListSortingStrategy,
-} from '@dnd-kit/sortable'
+import { SortableContext, verticalListSortingStrategy } from '@dnd-kit/sortable'
 import styles from './TaskList.module.scss'
 
 const TaskList: React.FC = () => {
