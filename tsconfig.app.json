@@ -27,11 +27,13 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"],
+      "@app/*": ["src/app/*"],
       "@shared/*": ["src/shared/*"],
       "@widgets/*": ["src/widgets/*"],
       "@pages/*": ["src/pages/*"],
       "@assets/*": ["src/shared/assets/*"],
-      "@entities/*": ["src/shared/entities/*"]
+      "@entities/*": ["src/shared/entities/*"],
+      "@features/*": ["src/features/*"]
     }
   },
   "include": ["src"]

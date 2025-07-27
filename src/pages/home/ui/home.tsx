@@ -1,7 +1,9 @@
+import type React from 'react'
+import TaskList from '@features/TaskList'
 import './home.module.scss'
 
-function Home() {
-  return <p>Home</p>
+const Home: React.FC = () => {
+  return <TaskList />
 }
 
 export default Home
