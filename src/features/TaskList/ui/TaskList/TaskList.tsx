@@ -1,6 +1,5 @@
 import type React from 'react'
 import { useAppDispatch, useAppSelector } from '@app/store/hooks'
-import type { RootState } from '@app/store/store'
 import { reorderTasks } from '@features/TaskList/model/slice'
 import { selectFilteredTasks } from '@features/TaskList/model/selectors'
 import TaskItem from '../TaskItem/TaskItem'
