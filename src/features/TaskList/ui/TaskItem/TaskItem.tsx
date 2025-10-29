@@ -17,6 +17,7 @@ const TaskItem: React.FC<TaskItemProps> = ({ id, title }) => {
     (state: RootState) =>
       state.taskList.tasks.find((task) => task.id === id)?.done
   )
+  const filter = useAppSelector((state: RootState) => state.taskList.filter)
   const dispatch = useAppDispatch()
 
   const { attributes, listeners, setNodeRef, transform, transition } =
@@ -37,7 +38,7 @@ const TaskItem: React.FC<TaskItemProps> = ({ id, title }) => {
     <div className={styles.taskItem} ref={setNodeRef} style={style}>
       <div className={styles.taskItemContent}>
         <img
-          className={styles.taskDragHandle}
+          className={filter == 'all' ? styles.taskDragHandle : styles.hide}
           {...listeners}
           {...attributes}
           src={dragHandleIcon}

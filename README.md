@@ -1,5 +1,3 @@
-# ChatApp_test_task
+# taskTraker
 
-Тестовое задание на позицию Frontend-заработчик в компанию ChatApp
-
-Ссылка на Vercel: https://chat-app-test-task.vercel.app/
+Для просмотра production версии перейдите по ссылке: https://chat-app-test-task.vercel.app/

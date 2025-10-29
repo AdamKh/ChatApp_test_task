@@ -2,8 +2,10 @@ import type React from 'react'
 import { useAppDispatch, useAppSelector } from '@app/store/hooks'
 import type { RootState } from '@app/store/store'
 import { reorderTasks } from '@features/TaskList/model/slice'
+import { selectFilteredTasks } from '@features/TaskList/model/selectors'
 import TaskItem from '../TaskItem/TaskItem'
 import TaskInput from '../TaskInput/TaskInput'
+import TaskFilter from '../TaskFilter/TaskFilter'
 import {
   closestCorners,
   DndContext,
@@ -17,7 +19,7 @@ import styles from './TaskList.module.scss'
 
 const TaskList: React.FC = () => {
   const dispatch = useAppDispatch()
-  const tasks = useAppSelector((state: RootState) => state.taskList.tasks)
+  const tasks = useAppSelector(selectFilteredTasks)
 
   const handleDragEnd = (e: any) => {
     const { active, over } = e
@@ -34,6 +36,7 @@ const TaskList: React.FC = () => {
   return (
     <div className={styles.taskList}>
       <TaskInput />
+      <TaskFilter />
       <DndContext
         collisionDetection={closestCorners}
         onDragEnd={handleDragEnd}

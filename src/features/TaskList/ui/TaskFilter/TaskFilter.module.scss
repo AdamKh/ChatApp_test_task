@@ -1,0 +1,28 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .filterTasks {
+    display: flex;
+    align-items: center;
+    .filterText {
+      margin-right: 20px;
+    }
+  }
+
+  .deleteAllButton {
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: none;
+    background: #e94e51;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+
+    &:hover {
+      background: #ad3325;
+    }
+  }
+}

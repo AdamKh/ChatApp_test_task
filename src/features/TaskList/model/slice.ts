@@ -9,12 +9,14 @@ interface Task {
 
 interface TaskListState {
   tasks: Task[]
+  filter: 'all' | 'completed' | 'active'
 }
 
 const initialState: TaskListState = {
   tasks: localStorage.getItem('tasks')
     ? JSON.parse(localStorage.getItem('tasks') || '[]')
     : [],
+  filter: 'all',
 }
 
 const taskSlice = createSlice({
@@ -48,9 +50,16 @@ const taskSlice = createSlice({
       state.tasks.splice(newIndex, 0, movedTask)
       localStorage.setItem('tasks', JSON.stringify(state.tasks))
     },
+
+    changeFilter: (
+      state,
+      action: PayloadAction<'all' | 'completed' | 'active'>
+    ) => {
+      state.filter = action.payload
+    },
   },
 })
 
-export const { addTask, removeTask, toggleDone, reorderTasks } =
+export const { addTask, removeTask, toggleDone, reorderTasks, changeFilter } =
   taskSlice.actions
 export default taskSlice.reducer
