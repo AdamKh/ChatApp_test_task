@@ -57,9 +57,20 @@ const taskSlice = createSlice({
     ) => {
       state.filter = action.payload
     },
+
+    removeCompletedTasks: (state) => {
+      state.tasks = state.tasks.filter((task) => !task.done)
+      localStorage.setItem('tasks', JSON.stringify(state.tasks))
+    },
   },
 })
 
-export const { addTask, removeTask, toggleDone, reorderTasks, changeFilter } =
-  taskSlice.actions
+export const {
+  addTask,
+  removeTask,
+  toggleDone,
+  reorderTasks,
+  changeFilter,
+  removeCompletedTasks,
+} = taskSlice.actions
 export default taskSlice.reducer

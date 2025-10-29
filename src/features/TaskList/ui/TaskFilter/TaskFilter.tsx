@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useAppDispatch } from '@app/store/hooks'
 import styles from './TaskFilter.module.scss'
-import { changeFilter } from '../../model/slice'
+import { changeFilter, removeCompletedTasks } from '../../model/slice'
 
 const TaskFilter: React.FC = () => {
   const dispatch = useAppDispatch()
@@ -11,6 +11,10 @@ const TaskFilter: React.FC = () => {
     const value = e.target.value
     dispatch(changeFilter(value))
     setFilterValue(value)
+  }
+
+  const handleRemoveCompletedTasks = () => {
+    dispatch(removeCompletedTasks())
   }
 
   return (
@@ -24,7 +28,10 @@ const TaskFilter: React.FC = () => {
         </select>
       </div>
 
-      <button className={styles.deleteAllButton}>
+      <button
+        className={styles.deleteAllButton}
+        onClick={handleRemoveCompletedTasks}
+      >
         Удалить все выполненные
       </button>
     </div>
